@@ -58,20 +58,22 @@ class Node{
 	   Prints the value of every node preorder
 	   */
 	   public void preOrderTraversal(Node root){//pre order traversal is key, left then right
-		if(root != null){ 
-			System.out.println(root + " ");
-			preOrderTraversal(root.left);
-			preOrderTraversal(root.right);
-		}
+			if(root != null){ 
+				System.out.println(root.value + " ");
+				preOrderTraversal(root.left);
+				preOrderTraversal(root.right);
+			}
 	   }
 	   
 	   /*
 	   in-order traversal
 	   */
 	   public void inOrderTraversal(Node root){//in order traversal is left, key then right
-			preOrderTraversal(root.left);
-			System.out.println(root + " ");
-			preOrderTraversal(root.right);
+			if(root != null){
+				preOrderTraversal(root.left);
+				System.out.println(root.value + " ");
+				preOrderTraversal(root.right);
+			}
 	   }
 	   
 	   
@@ -80,11 +82,12 @@ class Node{
 	   post-order traversal
 	   */
 	  
-	   public void postOrderTraversal(Node root){//post order traversal is key, left then right
-         	preOrderTraversal(root.left);
-			preOrderTraversal(root.right);
-			System.out.println(root + " ");
-		   
+	   public void postOrderTraversal(Node root){//post order traversal is left, right, then key
+			if(root != null){
+         		preOrderTraversal(root.left);
+				preOrderTraversal(root.right);
+				System.out.println(root.value + " ");
+			}
 	   }
 	   
 	   
@@ -94,8 +97,19 @@ class Node{
 	   with a specific value
 	   */
 	   public boolean find(Node root, int key){
-		 //implement in here
-		  
+		 	if(root == null){
+				return false;
+		 	}
+			
+			if(key == root.value){
+				return true;
+		 	}else if(key > root.value)
+			{
+				find(root.right, key);
+			}else if(key < root.value){
+				find(root.left, key);
+			}
+		 	return false;
 	   }
 	   
 	   
