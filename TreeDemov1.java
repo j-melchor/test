@@ -119,8 +119,11 @@ class Node{
 	   with a smallest key
 	   */
 	   public int getMin(Node root){
-         //implement in here
-	      
+			if(root.left == null){
+				return root.value;
+			}
+
+			return getMin(root.left);
 	   }
 	  
 	  
