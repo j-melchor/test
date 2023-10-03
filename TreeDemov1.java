@@ -122,7 +122,6 @@ class Node{
 			if(root.left == null){
 				return root.value;
 			}
-
 			return getMin(root.left);
 	   }
 	  
@@ -133,7 +132,10 @@ class Node{
 	   with a largest key
 	   */
 	   public int getMax(Node root){
-         //implement in here
+         	if(root.right == null){
+				return root.value;
+			}
+			return getMin(root.right);
 	   }
 	   
 	   
