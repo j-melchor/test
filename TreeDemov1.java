@@ -57,20 +57,21 @@ class Node{
 	   pre-order traversal
 	   Prints the value of every node preorder
 	   */
-	   public void preOrderTraversal(Node root){//pre order traversal is left then right
+	   public void preOrderTraversal(Node root){//pre order traversal is key, left then right
 		if(root != null){ 
 			System.out.println(root + " ");
 			preOrderTraversal(root.left);
 			preOrderTraversal(root.right);
 		}
-		   
 	   }
 	   
 	   /*
 	   in-order traversal
 	   */
-	   public void inOrderTraversal(Node root){
-	      //implement in here
+	   public void inOrderTraversal(Node root){//in order traversal is key, left then right
+			preOrderTraversal(root.left);
+			System.out.println(root + " ");
+			preOrderTraversal(root.right);
 	   }
 	   
 	   
