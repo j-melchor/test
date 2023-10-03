@@ -68,7 +68,7 @@ class Node{
 	   /*
 	   in-order traversal
 	   */
-	   public void inOrderTraversal(Node root){//in order traversal is key, left then right
+	   public void inOrderTraversal(Node root){//in order traversal is left, key then right
 			preOrderTraversal(root.left);
 			System.out.println(root + " ");
 			preOrderTraversal(root.right);
@@ -80,8 +80,10 @@ class Node{
 	   post-order traversal
 	   */
 	  
-	   public void postOrderTraversal(Node root){
-         //implement in here
+	   public void postOrderTraversal(Node root){//post order traversal is key, left then right
+         	preOrderTraversal(root.left);
+			preOrderTraversal(root.right);
+			System.out.println(root + " ");
 		   
 	   }
 	   
